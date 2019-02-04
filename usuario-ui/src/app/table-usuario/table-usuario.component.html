@@ -1,0 +1,71 @@
+<div>
+    <div class="card-header">
+        Lista de Usuários
+    </div>
+    <form action="">
+        <div class="card-body row">
+            <div class="col-md-6">
+                Nome
+                <input type="text" class="form-control" aria-label="Name" aria-describedby="nome" [(ngModel)]="usuario.nome"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="col-md-3">
+                <label>Função</label>
+                <select class="form-control" id="fun" [(ngModel)]="usuario.situacao" [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let situacao of situacoes" [value]="situacao.label">{{situacao.descricao}}</option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <label>Perfil</label>
+                <select class="form-control" id="per" [(ngModel)]="usuario.perfil.id" [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let perfil of perfils" [value]="perfil.id">{{perfil.descricao}}</option>
+                </select>
+            </div>
+
+            <div class="col-md-3 offset-md-9 pt-2">
+                <button class="btn btn-primary btn-block" type="submit" (click)="buscar()"><i class="fas fa-search"></i>
+                    Pesquisar</button>
+            </div>
+        </div>
+    </form>
+    <div class="container-fluid pb-2">
+    
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus-square"></i> Incluir</button>
+        </div>
+        <div class="col-md-3 offset-md-6">
+            <select class="custom-select" id="situacao">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <table class="pt-2 table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Perfil</th>
+                    <th scope="col">Habilitado</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios">
+                    <td>{{usuario.email}}</td>
+                    <td>{{usuario.nome}}</td>
+                    <td>{{usuario.perfil.descricao}}</td>
+                    <td>{{usuario.situacao}}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="deletarUsuario(usuario.cpf)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

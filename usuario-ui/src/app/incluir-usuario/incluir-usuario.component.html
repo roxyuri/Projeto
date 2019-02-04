@@ -1,0 +1,42 @@
+<form #myForm="ngForm">
+  <div class="container">
+    <div class="row">
+      <div class="form-group" [ngClass]="{'has-error': !name.valid}">
+        <label for="nome" class="control-label">Nome*</label>
+        <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="nome" #name="ngModel" required />
+        <span class="help-block" *ngIf="name.errors">
+          <ul>
+            <li *ngIf="name.errors.required">
+              O campo nome é requerido!
+            </li>
+          </ul>
+        </span>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': !mail.valid}">
+        <label for="email">E-mail*</label>
+        <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email" #mail="ngModel" required />
+        <span class="help-block" *ngIf="mail.errors">
+          <ul>
+            <li *ngIf="mail.errors.required">
+              O campo e-mail é requerido!
+            </li>
+          </ul>
+        </span>
+      </div>
+
+      <div class="form-group" [ngClass]="{'has-error': !mcpf.valid}">
+          <label for="cpf">CPF*</label>
+          <input type="text" mask='{000.000.000-99}' class="form-control" id="cpf" name="cpf" [(ngModel)]="cpf" #mcpf="ngModel" required />
+          <span class="help-block" *ngIf="mail.errors">
+            <ul>
+              <li *ngIf="mcpf.errors.required">
+                O campo CPF é requerido!
+              </li>
+            </ul>
+          </span>
+        </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Salvar</button>
+      <button class="btn btn-primary">Voltar</button>
+    </div>
+  </div>
+</form>

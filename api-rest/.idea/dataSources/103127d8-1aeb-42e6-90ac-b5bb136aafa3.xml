@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="datainfo@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.10">
+    <root id="1">
+      <ServerVersion>9.4.20</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="datainfo">
+      <ObjectId>24576</ObjectId>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>25</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12135</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <Owner>postgres</Owner>
+    </database>
+    <role id="4" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <schema id="5" parent="2" name="information_schema">
+      <ObjectId>11585</ObjectId>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="6" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="7" parent="2" name="pg_temp_1">
+      <ObjectId>11320</ObjectId>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="8" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="9" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11321</ObjectId>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="10" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <Owner>postgres</Owner>
+      <IntrospectionTimestamp>2019-01-31.22:52:23.823</IntrospectionTimestamp>
+      <IntrospectionStateNumber>695</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="11" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+    </access-method>
+    <access-method id="12" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+    </access-method>
+    <access-method id="13" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+    </access-method>
+    <access-method id="14" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+    </access-method>
+    <access-method id="15" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+    </access-method>
+    <sequence id="16" parent="10" name="funcao_usuario_externo_co_funcao_seq">
+      <ObjectId>24577</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>677</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="17" parent="10" name="funcao_usuario_externo">
+      <ObjectId>24579</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>686</StateNumber>
+    </table>
+    <table id="18" parent="10" name="perfil_acesso">
+      <ObjectId>24603</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>687</StateNumber>
+    </table>
+    <table id="19" parent="10" name="usuario_externo">
+      <ObjectId>24595</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>687</StateNumber>
+    </table>
+    <column id="20" parent="17" name="co_funcao">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>677</StateNumber>
+      <DefaultExpression>nextval(&apos;funcao_usuario_externo_co_funcao_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>funcao_usuario_externo_co_funcao_seq</SequenceName>
+    </column>
+    <column id="21" parent="17" name="no_funcao">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>677</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="22" parent="17" name="pk_eprtb016">
+      <ObjectId>24583</ObjectId>
+      <ColNames>co_funcao</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="23" parent="17" name="pk_eprtb016">
+      <ObjectId>24584</ObjectId>
+      <ColNames>co_funcao</ColNames>
+      <UnderlyingIndexName>pk_eprtb016</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="18" name="ic_perfil_acesso">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>695</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="25" parent="18" name="descricao">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>685</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="26" parent="18" name="perfil_acesso_pkey">
+      <ObjectId>24606</ObjectId>
+      <ColNames>ic_perfil_acesso</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="27" parent="18" name="perfil_acesso_pkey">
+      <ObjectId>24607</ObjectId>
+      <ColNames>ic_perfil_acesso</ColNames>
+      <UnderlyingIndexName>perfil_acesso_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="19" name="nu_cpf">
+      <Position>1</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>684</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="29" parent="19" name="co_funcao">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>684</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="30" parent="19" name="de_email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>684</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="31" parent="19" name="ic_perfil_acesso">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>684</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="32" parent="19" name="ic_situacao">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>684</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="33" parent="19" name="no_usuario">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>684</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="34" parent="19" name="nu_telefone">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>684</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="35" parent="19" name="usuario_externo_pkey">
+      <ObjectId>24601</ObjectId>
+      <ColNames>nu_cpf</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="19" name="usuario_externo_pkey">
+      <ObjectId>24602</ObjectId>
+      <ColNames>nu_cpf</ColNames>
+      <UnderlyingIndexName>usuario_externo_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="19" name="fkr7x1hy9e9f8a3euvln7n4itsi">
+      <ObjectId>24608</ObjectId>
+      <ColNames>co_funcao</ColNames>
+      <RefTableId>24579</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>funcao_usuario_externo</RefTableName>
+      <RefKeyName>pk_eprtb016</RefKeyName>
+      <RefColNames>co_funcao</RefColNames>
+    </foreign-key>
+    <foreign-key id="38" parent="19" name="fkmc3d82wkx7g5aesoi53mbppyu">
+      <ObjectId>24613</ObjectId>
+      <ColNames>ic_perfil_acesso</ColNames>
+      <RefTableId>24603</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>perfil_acesso</RefTableName>
+      <RefKeyName>perfil_acesso_pkey</RefKeyName>
+      <RefColNames>ic_perfil_acesso</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
