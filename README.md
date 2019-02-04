@@ -1,7 +1,7 @@
 # Projeto
 
-Frontend feito em Angular 4
-Backend feito em Java 8 com Framework spring e utiliza o Maven como gerenciador de dependências.
+#Frontend feito em Angular 4
+#Backend feito em Java 8 com Framework spring e utiliza o Maven como gerenciador de dependências.
 
 #Run Frontend
 Para rodar a aplicação, primeiro utilize o comando "npm i"(sem as aspas) no console para baixar as dependências.
